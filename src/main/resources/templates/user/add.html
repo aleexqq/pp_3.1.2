@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Edit</title>
+</head>
+<body>
+<h2>Edit User</h2>
+
+<form th:action="@{/users/edit}" th:object="${user}" method="post">
+    <input type="hidden" th:field="*{id}" />
+
+    <label for="name">Name:</label>
+    <input type="text" id="name" th:field="*{name}" />
+
+    <label for="last name">Last name:</label>
+    <input type="text" id="last name" th:field="*{lastName}" />
+
+    <label for="email">Email:</label>
+    <input type="text" id="email" th:field="*{email}" />
+
+    <input type="submit" value="Edit Film" />
+</form>
+
+</body>
+</html>

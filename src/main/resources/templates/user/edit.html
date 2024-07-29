@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title th:text="${user.name == null ? 'Add' : 'Edit'}"></title>
+</head>
+<body>
+<form th:action="@{${user.name == null ? '/users/add' : '/users/edit'}}" method="POST">
+    <input type="hidden" th:if="${user.name != null}" name="id" th:value="${user.id}">
+
+    <label for="name">Name</label>
+    <input type="text" name="name" id="name" th:value="${user.name}">
+
+    <label for="lastName">Last name</label>
+    <input type="text" name="lastName" id="lastName" th:value="${user.lastName}">
+
+    <label for="email">Email</label>
+    <input type="text" name="email" id="email" th:value="${user.email}">
+
+    <input type="submit" th:value="${user.name == null ? 'Add new User' : 'Edit User'}">
+</form>
+</body>
+</html>
